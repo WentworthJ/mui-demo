@@ -6,8 +6,15 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Profile from "./Profile";
 import { Link } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
+import routes from "./routes";
 
 
+//import DefaultProfile from "./DefaultProfile";
+//import Spinach from "./Spinach";
+//import Popeye from "./Popeye";
+
+/*
 const Popeye = () => {
   return (
     <>
@@ -17,24 +24,37 @@ const Popeye = () => {
   );
 };
 
-export default Popeye;
+export default Popeye; //WRONG FILE?*/
 
 
-const router = createBrowserRouter([
+
+
+//Adding a Router step 
+const router = createBrowserRouter(routes);
+
+
+/*const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
   },
   {
-    path: "profile",
+    path: "profile/:name",
     element: <Profile />,
   },
-]);
+]);*/
 
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+
+
+
+/*ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
-)
+)*/

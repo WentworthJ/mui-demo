@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import VariantButtonGroup from './components/buttonGroup'
+import { Link } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,7 +27,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="profile">Profile page</a>
+              <Link to="profile">Profile page</Link>
             </li>
           </ul>
         </nav>
@@ -34,5 +35,7 @@ function App() {
     </>
   )
 }
+
+
 
 export default App
